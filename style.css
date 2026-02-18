@@ -1,0 +1,124 @@
+/* For project */
+:root {
+    &[data-theme="light"] {
+        --bg-color-hero_1: #D6DDE9;
+        --bg-color-hero_2: #ABCDEF;
+    }
+    &[data-theme="dark"] {
+        --bg-color-hero_1: #303548;
+        --bg-color-hero_2: #161a23;
+    }
+}
+
+main {
+    background: var(--bg-color-hero_2);
+    color: var(--tx-color-1);
+
+    article {
+        padding: var(--space-200);
+        width: 100%;
+        &:not(:first-child) {
+            border: var(--dashed) var(--tx-color-1);
+        }
+    }
+}
+
+.hero {
+    background: radial-gradient(at 20% 20%, var(--bg-color-hero_1) 10%, var(--bg-color-hero_2) 70%);
+    width: 100%;
+    height: 100dvh;
+    position: relative;
+
+    .hero-brand {
+        gap: var(--space-100);
+    }
+
+    .hero-logo {
+        color: var(--tx-color-1);
+        width: 7em;
+        height: 7em;
+    }
+
+    .hero-title {
+        font-size: 6em;
+        white-space: nowrap;
+    }
+
+    .hero-content {
+        font-size: var(--size-6);
+        width: 620px;
+    }
+}
+
+.hero-content {
+
+    ul {
+        list-style-type: none;
+    }
+
+    .nav-item a {
+        color: var(--tx-color-2);
+        font-size: var(--size-4);
+        padding-block: .5rem;
+        padding-inline: 1.5rem;
+        background: transparent;
+        border: none;
+        border-radius: var(--radius-4);
+        outline: var(--solid-1) var(--tx-color-3);
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+            color: var(--tx-color-1);
+            outline: var(--solid-1) var(--tx-color-1);
+        }
+    }
+}
+
+.link {
+    color: var(--color);
+    text-decoration: none;
+}
+
+.arrow-scroll-animation {
+    animation: go-to-down 3s infinite;
+    position: absolute;
+    bottom: 5%;
+}
+
+@keyframes go-to-down {
+    0%, 100% {
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+
+    35% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+
+    70% {
+        transform: translateY(-1rem);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .hero {
+
+        .hero-logo {
+            width: 4em;
+            height: 4em;
+        }
+
+        .hero-title {
+            font-size: 3em;
+        }
+
+        .hero-intro {
+            font-size: var(--size-6);
+            width: 100%;
+            margin-block: var(--space-150);
+        }
+    }
+}
